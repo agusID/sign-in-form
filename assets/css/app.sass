@@ -1,0 +1,198 @@
+$place_holder_color: #95a5a6
+$bg_color: #f5f6f8
+$white: #ffffff
+
+*
+    padding: 0
+    margin: 0
+
+body
+    background-color: $bg_color
+    font-family: system-ui, 'Segoe Ui'
+
+input[type='text'], input[type='password'], input[type='submit']
+    padding: 0.5rem
+    outline: none
+
+::placeholder, ::-ms-input-placeholder
+    color: $place_holder_color
+    opacity: 1
+
+.login-container
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: row
+    height: 100vh
+    perspective: 800px
+    .message-box
+        padding: 10px 0
+        width: 300px
+        height: 38px
+        font-family: system-ui
+        font-size: 14px
+        user-select: none
+        color: $white
+        .error-message, .success-message
+            padding: 10px 15px
+            display: flex
+            border-radius: 5px
+            align-items: center
+            justify-content: space-between
+            position: relative
+            
+        .error-message
+            background-color: #e74c3c
+        .success-message
+            background-color: #44bd32
+    .form-login
+        margin-top: -40px
+        width: 300px
+        .form-login-body
+            padding: 20px
+            background-color: $white
+            border-radius: .625rem
+            box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1), 0 0.9375rem 1.40625rem rgba(90,97,105,.1), 0 0.25rem 0.53125rem rgba(90,97,105,.12), 0 0.125rem 0.1875rem rgba(90,97,105,.1)
+            display: flex
+            flex-wrap: nowrap
+            flex-direction: column
+        .form-logo
+            align-items: center
+            display: flex
+            padding: 20px 0 20px 0
+            img
+                max-width: 100%
+                margin: 0 auto
+                max-height: 70px
+                user-select: none
+                
+        .form-title
+            font-size: 20px 
+            user-select: none
+            text-align: center
+            margin: 5px 0
+        .btn-group
+            position: relative
+        .form-group
+            padding-top: 10px
+            display: flex
+            .form-input
+                font-size: 16px
+                font-weight: 300
+                width: 100%
+                border-top-left-radius: none
+                padding-left: 0
+                border: 1px solid #e1e5eb
+                border-top: none
+                border-left: none
+                border-right: 0
+                transition: all 0.3s ease-out
+                &:focus, &:focus + .icon
+                    border-color: #007bff
+                
+            .icon
+                transition: all 0.3s ease-out
+                padding: 1rem 0.5rem 1rem 0
+                color: #7f8c8d
+                border: 1px solid #e1e5eb
+                border-top: none
+                border-left: none
+                border-right: 0
+        .remember
+            padding-top: 10px
+            font-size: 12px
+            display: flex
+            justify-content: center
+            align-items: center
+            .remember-me
+                position: absolute
+                opacity: 0
+            
+                & + label
+                    position: relative
+                    cursor: pointer
+                    padding: 0
+                    color: #7f8c8d
+                    font-size: 12px
+            
+                // Box.
+                & + label:before
+                    content: ''
+                    margin-right: 7px
+                    display: inline-block
+                    vertical-align: text-top
+                    width: 15px
+                    height: 15px
+                    background: #ebebeb
+                    transition: all 0.2s ease-out
+                    border-radius: 2px
+            
+                // Box hover
+                &:hover + label:before
+                    background: #bdc3c7
+
+                // Box focus
+                &:focus + label:before 
+                    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12)
+            
+                // Box checked
+                &:checked + label:before 
+                    background: #007bff
+            
+                // Disabled state label.
+                &:disabled + label
+                    color: #b8b8b8
+                    cursor: auto
+
+                // Disabled box.
+                &:disabled + label:before
+                    box-shadow: none
+                    background: #ddd
+            
+                // Checkmark. Could be replaced with an image
+                &:checked + label:after 
+                    content: ''
+                    position: absolute
+                    left: 3px
+                    top: 6px
+                    background: white
+                    width: 2px
+                    height: 2px
+                    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white
+                    transform: rotate(45deg) scale(0.8)
+
+        .btn-login
+            outline: none
+            position: relative
+            width: 100%
+            color: rgba(255,255,255,0.8)
+            font-size: 20px
+            border-radius: 3rem
+            padding: 10px 0
+            font-weight: 300
+            cursor: pointer
+            border: none
+            margin-top: 15px
+            overflow: hidden
+            user-select: none
+            color: #fff
+            border-color: #007bff
+            background-color: #007bff
+            transition: background-color 0.5s ease-out
+            &:hover
+                opacity: 0.9
+                transition: width 0.3s 0.15s, font-size 0.1s 0.15s
+        .btn-disabled
+            color: white
+            background-color: #95a5a6
+            border-color: #95a5a6
+            cursor: default
+            user-select: none
+            pointer-events: none
+            transition: background-color 0.5s ease-out
+
+/* Responsive */
+@media only screen and (max-width: 600px)
+    .login-container
+        .form-login
+            width: 85% !important
