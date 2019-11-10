@@ -1,6 +1,9 @@
 $place_holder_color: #95a5a6
 $bg_color: #f5f6f8
+$primary:  #007bff
 $white: #ffffff
+$green: #44bd32
+$red: #e74c3c
 
 *
     padding: 0
@@ -42,9 +45,9 @@ input[type='text'], input[type='password'], input[type='submit']
             position: relative
             
         .error-message
-            background-color: #e74c3c
+            background-color: $red
         .success-message
-            background-color: #44bd32
+            background-color: $green
     .form-login
         margin-top: -40px
         width: 300px
@@ -88,7 +91,7 @@ input[type='text'], input[type='password'], input[type='submit']
                 border-right: 0
                 transition: all 0.3s ease-out
                 &:focus, &:focus + .icon
-                    border-color: #007bff
+                    border-color: $primary
                 
             .icon
                 transition: all 0.3s ease-out
@@ -137,7 +140,7 @@ input[type='text'], input[type='password'], input[type='submit']
             
                 // Box checked
                 &:checked + label:before 
-                    background: #007bff
+                    background: $primary
             
                 // Disabled state label.
                 &:disabled + label
@@ -176,8 +179,8 @@ input[type='text'], input[type='password'], input[type='submit']
             overflow: hidden
             user-select: none
             color: #fff
-            border-color: #007bff
-            background-color: #007bff
+            border-color: $primary
+            background-color: $primary
             transition: background-color 0.5s ease-out
             &:hover
                 opacity: 0.9
